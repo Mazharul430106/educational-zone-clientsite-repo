@@ -1,14 +1,11 @@
 import './App.css';
-import Login from './Pages/Login/Login';
-import Register from './Pages/Register/Register';
-import Hader from './Pages/Shared/Hader/Hader';
+import {RouterProvider} from 'react-router-dom';
+import { routes } from './Pages/Routes/Route/Route';
 
 function App() {
   return (
     <div>
-        <Hader></Hader>
-        <Login></Login>
-        <Register></Register>
+        <RouterProvider router={routes}></RouterProvider>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image'
 import Logo from '../../../assets/Logo/Logo.png';
+import {Link} from 'react-router-dom';
 
 const Hader = () => {
     return (
@@ -14,12 +15,24 @@ const Hader = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <Nav.Link href="#home" className='text-white'>Home</Nav.Link>
-                        <Nav.Link href="#home" className='text-white'>Courses</Nav.Link>
-                        <Nav.Link href="#link" className='text-white'>Blog</Nav.Link>
-                        <Nav.Link href="#link" className='text-white'>Faq</Nav.Link>
-                        <Nav.Link href="#link" className='text-white'>Register</Nav.Link>
-                        <Nav.Link href="#link" className='text-white'>Login</Nav.Link>
+                        <Nav.Link className='text-white'>
+                            <Link className='text-white text-decoration-none' to='/home'>Home</Link>
+                        </Nav.Link>
+                        <Nav.Link className='text-white'>
+                            <Link className='text-white text-decoration-none' to='/courses' >Courses</Link>  
+                        </Nav.Link>
+                        <Nav.Link className='text-white'>
+                            <Link className='text-white text-decoration-none' to='/blog'>Blog</Link>
+                        </Nav.Link>
+                        <Nav.Link className='text-white'>
+                            <Link className='text-white text-decoration-none' to='/faq' >Faq</Link>
+                        </Nav.Link>
+                        <Nav.Link className='text-white'>
+                            <Link className='text-white text-decoration-none' to='/register'>Register</Link>
+                        </Nav.Link>
+                        <Nav.Link className='text-white'>
+                            <Link className='text-white text-decoration-none' to='/login'>Login</Link>
+                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
