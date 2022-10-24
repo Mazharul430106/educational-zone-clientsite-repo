@@ -4,9 +4,21 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const Register = () => {
+
+    const handleSubmitFormRegister = (event)=>{
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photoUrl = form.Url.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name,photoUrl,email,password);
+    }
+
+
     return (
         <Container>
-            <Form>
+            <Form onSubmit={handleSubmitFormRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Enter name" />
