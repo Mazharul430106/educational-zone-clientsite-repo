@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 
 const Hader = () => {
     return (
-        <Navbar bg="secondary" expand="lg">
+        <Navbar bg="secondary" expand="lg" className='mb-3' >
             <Container> 
                 <Image src={Logo} style={{height: '50px', marginRight: '10px' }} ></Image>
                 <Navbar.Brand className='text-white' href="#home">Educational Zone</Navbar.Brand>

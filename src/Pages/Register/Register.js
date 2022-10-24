@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const Register = () => {
+
+    const [acepte, setAcepte] = useState(false);
+
 
     const handleSubmitFormRegister = (event)=>{
         event.preventDefault();
@@ -15,6 +19,9 @@ const Register = () => {
         console.log(name,photoUrl,email,password);
     }
 
+    const handleChecked = (event)=>{
+        setAcepte(event.target.checked);
+    }
 
     return (
         <Container>
@@ -37,10 +44,10 @@ const Register = () => {
                     <Form.Control type="password" name='password'  placeholder="Password" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check type="checkbox" onClick={handleChecked} label= {<>Acepte <Link to='/trams'>Trams And Conditions</Link> </>} />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" disabled= {!acepte}>
                     Register
                 </Button>
             </Form>
