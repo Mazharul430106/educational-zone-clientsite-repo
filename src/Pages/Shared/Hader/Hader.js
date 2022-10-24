@@ -5,8 +5,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image'
 import Logo from '../../../assets/Logo/Logo.png';
 import {Link} from 'react-router-dom';
+import {useContext} from 'react';
+// import { AuthContext } from '../../../Contexts/AuthProvider';
+import {AuthContext} from '../../../Contexts/AuthProvider';
 
 const Hader = () => {
+
+    const {user} = useContext(AuthContext);
+    console.log(user);
+
     return (
         <Navbar bg="secondary" expand="lg" className='mb-3' >
             <Container> 
@@ -33,6 +40,13 @@ const Hader = () => {
                         <Nav.Link className='text-white'>
                             <Link className='text-white text-decoration-none' to='/login'>Login</Link>
                         </Nav.Link>
+
+
+                        <Nav.Link>
+                            {user?.displayName}
+                        </Nav.Link>
+
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>
