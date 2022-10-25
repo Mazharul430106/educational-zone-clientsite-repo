@@ -18,12 +18,15 @@ const Login = () => {
         loginUser(email,password)
         .then(result=>{
             const user = result.user;
+            form.reset();
             console.log(user);
+
         })
         .catch(error=> {
             console.error('error',error);
         })
     }
+
 
     return (
         <Container>

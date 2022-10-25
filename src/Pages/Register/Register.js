@@ -1,38 +1,54 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useContext } from 'react';
-import {AuthContext} from '../../Contexts/AuthProvider';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const { createUser , updateUserProfile} = useContext(AuthContext);
     const [acepte, setAcepte] = useState(false);
+    const [success, setSuccess] = useState('');
 
-    const handleSubmitFormRegister = (event)=>{
+    const handleSubmitFormRegister = (event) => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const photoUrl = form.Url.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(name,photoUrl,email,password);
-        
-        createUser(email,password)
-        .then(result=> {
-            const user = result.user;
-            console.log(user);
-            form.reset();
-        })
-        .catch(error=> {
-            console.error('error',error);
-        })
+        console.log(name,photoUrl,email,password);
 
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                setSuccess('Registration Succesfull.');
+                handleUpdateUserProfile(name,photoUrl);
+            })
+            .catch(error => {
+                console.error('error', error);
+            })
     }
 
-    const handleChecked = (event)=>{
+    const handleUpdateUserProfile = (name, photoUrl)=>{
+        const profile = {
+            displayName: name,
+            photoURL: photoUrl
+        }
+        updateUserProfile(profile)
+        .then(()=>{})
+        .catch(error=> {
+            console.log('error',error);
+        })
+    }
+
+
+
+    const handleChecked = (event) => {
         setAcepte(event.target.checked);
     }
 
@@ -54,13 +70,19 @@ const Register = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name='password'  placeholder="Password" />
+                    <Form.Control type="password" name='password' placeholder="Password" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" onClick={handleChecked} label= {<>Acepte <Link to='/trams'>Trams And Conditions</Link> </>} />
+                <Form.Group>
+                    <Form.Text className="text-success">
+                       {success}
+                    </Form.Text>
                 </Form.Group>
 
-                <Button variant="primary" type="submit" disabled= {!acepte}>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" onClick={handleChecked} label={<>Acepte <Link to='/trams'>Trams And Conditions</Link> </>} />
+                </Form.Group>
+
+                <Button variant="primary" type="submit" disabled={!acepte}>
                     Register
                 </Button>
             </Form>
