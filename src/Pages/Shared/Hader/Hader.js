@@ -65,10 +65,11 @@ const Hader = () => {
                         }
 
                         <Nav.Link>
+                           
                             {
                                 user?.photoURL ?
                                 <>
-                                    <Image src={user?.photoURL} style={{height:'30px'}} roundedCircle  > 
+                                    <Image src={user?.photoURL} style={{height:'30px'}} roundedCircle > 
                                     
                                     </Image>
                                 </>

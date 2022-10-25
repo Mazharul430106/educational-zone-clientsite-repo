@@ -4,10 +4,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useContext } from "react";
 import {AuthContext} from '../../Contexts/AuthProvider';
+import { FaFacebook,FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
 
-    const {loginUser} = useContext(AuthContext);
+    const {loginUser, providerLogin} = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
 
     const handleSubmitFormLogin = (event)=>{
         event.preventDefault();
@@ -20,16 +23,25 @@ const Login = () => {
             const user = result.user;
             form.reset();
             console.log(user);
-
         })
         .catch(error=> {
             console.error('error',error);
         })
     }
 
+    const handleSignInGoogle = ()=>{
+        providerLogin(googleProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.log('error',error);
+        })
+    }
 
     return (
-        <Container>
+        <Container className='w-25'>
             <Form onSubmit={handleSubmitFormLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -40,10 +52,12 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" className='w-100'>
                     Login
                 </Button>
             </Form>
+            <Button variant="secondary" className='w-100 mt-2 mb-2'> <FaFacebook></FaFacebook> Login With Facebook</Button>
+            <Button onClick={handleSignInGoogle} variant="success" className='w-100'> <FaGoogle></FaGoogle> Login With Google</Button>
             
         </Container>
     );
