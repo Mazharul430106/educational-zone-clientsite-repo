@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData,Link } from 'react-router-dom';
 import { FaDownload } from 'react-icons/fa';
 
 const CheckOutPage = () => {
     const courseDetails = useLoaderData();
-    const { details, picture, title } = courseDetails;
+    const { details, picture, title, id } = courseDetails;
     return (
         <Container>
             <div className="card">
@@ -22,7 +22,7 @@ const CheckOutPage = () => {
 
                             <p>{details}</p>
                             <div className='text-center'>
-                                <button className='border-0 bg-secondary p-2 rounded ps-3 pe-3 text-white'>Get Premium Access</button>
+                                <Link  className='border-0 text-decoration-none bg-secondary p-2 rounded ps-3 pe-3 text-white' to={`/checkInfo/${id}`}>Get Premium Access</Link>
                             </div>
                             
                         </div>

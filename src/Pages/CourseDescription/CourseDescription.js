@@ -8,8 +8,7 @@ const CourseDescription = ({course}) => {
             <div className="card">
                 <img src={picture} style={{ height: '200px' }} className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h6 className="card-title"><Link className='text-decoration-none text-black' to={`/checkout/${id}`}>{title}</Link> </h6>
-                    <Link></Link>
+                    <h6 className="card-title"><Link className='text-black' to={`/checkout/${id}`}>{title}</Link> </h6>
                 </div>
             </div>
         </div>
