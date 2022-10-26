@@ -11,7 +11,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 const Login = () => {
 
     const { loginUser, providerLogin } = useContext(AuthContext);
-    
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -31,11 +31,10 @@ const Login = () => {
                 form.reset();
                 console.log(user);
                 navigate(from, { replace: true });
-                
+                setError('Password did not match');
             })
             .catch(error => {
                 console.error('error', error);
-                
             })
     }
 
@@ -73,6 +72,11 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Text className="text-muted">
+                        {error}
+                    </Form.Text>
                 </Form.Group>
                 <Button variant="primary" type="submit" className='w-100 mt-3'>
                     Login

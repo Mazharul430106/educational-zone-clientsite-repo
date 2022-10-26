@@ -70,6 +70,7 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required/>
                 </Form.Group>
+                
                 <Form.Group>
                     <Form.Text className="text-success">
                        {success}
