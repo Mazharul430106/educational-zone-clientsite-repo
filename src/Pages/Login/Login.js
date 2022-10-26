@@ -6,6 +6,7 @@ import { useContext } from "react";
 import {AuthContext} from '../../Contexts/AuthProvider';
 import { FaFacebook,FaGoogle } from "react-icons/fa";
 import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -69,8 +70,10 @@ const Login = () => {
                 </Button>
             </Form>
             <Button onClick={handleSignInFacebook} variant="secondary" className='w-100 mt-2 mb-2'> <FaFacebook></FaFacebook> Login With Facebook</Button>
-            <Button onClick={handleSignInGoogle} variant="success" className='w-100'> <FaGoogle></FaGoogle> Login With Google</Button>
+            <Button onClick={handleSignInGoogle} variant="success" className='w-100 mb-2'> <FaGoogle></FaGoogle> Login With Google</Button>
             
+            <Link to='/register'>Please Register</Link>
+
         </Container>
     );
 };

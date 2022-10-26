@@ -10,15 +10,12 @@ import app from '../Firebase/Firebase.init';
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
-
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState('');
 
     const providerLogin = (provider)=>{
         return signInWithPopup(auth, provider);
     }
-
-
 
     const updateUserProfile = (profile)=>{
         return updateProfile(auth.currentUser, profile);

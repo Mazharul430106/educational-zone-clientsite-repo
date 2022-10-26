@@ -30,16 +30,13 @@ const Hader = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         <Nav.Link className='text-white'>
-                            <Link className='text-white text-decoration-none' to='/home'>Home</Link>
-                        </Nav.Link>
-                        <Nav.Link className='text-white'>
                             <Link className='text-white text-decoration-none' to='/courses' >Courses</Link>
                         </Nav.Link>
                         <Nav.Link className='text-white'>
                             <Link className='text-white text-decoration-none' to='/blog'>Blog</Link>
                         </Nav.Link>
                         <Nav.Link className='text-white'>
-                            <Link className='text-white text-decoration-none' to='/faq' >Faq</Link>
+                            <Link className='text-white text-decoration-none' to='/faq' >FAQ</Link>
                         </Nav.Link>
 
                         {
