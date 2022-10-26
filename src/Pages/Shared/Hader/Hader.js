@@ -66,7 +66,7 @@ const Hader = () => {
                             {
                                 user?.photoURL ?
                                 <>
-                                    <Image src={user?.photoURL} style={{height:'30px'}} roundedCircle > 
+                                    <Image title={user?.displayName} src={user?.photoURL} style={{height:'30px'}} roundedCircle > 
                                     
                                     </Image>
                                 </>
