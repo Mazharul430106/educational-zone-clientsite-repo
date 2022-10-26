@@ -70,26 +70,17 @@ const Login = () => {
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name='email' placeholder="Enter email" required />
                 </Form.Group>
-
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-                <Form.Group>
-                    <Form.Text className="text-muted">
-                       
-                    </Form.Text>
-                </Form.Group>
-
                 <Button variant="primary" type="submit" className='w-100 mt-3'>
                     Login
                 </Button>
             </Form>
             <Button onClick={handleSignInFacebook} variant="secondary" className='w-100 mt-2 mb-2'> <FaFacebook></FaFacebook> Login With Facebook</Button>
             <Button onClick={handleSignInGoogle} variant="success" className='w-100 mb-2'> <FaGoogle></FaGoogle> Login With Google</Button>
-
             <Link to='/register'>Please Register</Link>
-
         </Container>
     );
 };
