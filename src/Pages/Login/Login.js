@@ -15,10 +15,8 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
-
     const handleSubmitFormLogin = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -31,10 +29,11 @@ const Login = () => {
                 form.reset();
                 console.log(user);
                 navigate(from, { replace: true });
-                setError('Password did not match');
+                
             })
             .catch(error => {
-                console.error('error', error);
+                console.log('error', error);
+                setError(error.message);
             })
     }
 
@@ -74,7 +73,7 @@ const Login = () => {
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Text className="text-muted">
+                    <Form.Text className="text-danger">
                         {error}
                     </Form.Text>
                 </Form.Group>

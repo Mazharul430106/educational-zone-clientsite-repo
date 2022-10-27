@@ -1,10 +1,13 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 const Faq = () => {
     return (
-        <div>
-            <h1>This is Faq Page</h1>
-        </div>
+            <Container>
+                
+                <h1>This is Faq Page</h1>
+       
+            </Container>
     );
 };
 

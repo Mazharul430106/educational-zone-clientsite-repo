@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -12,6 +12,8 @@ import { FaUser } from "react-icons/fa";
 const Hader = () => {
     const { user, logOutUser } = useContext(AuthContext);
     console.log(user);
+
+    const [darkMode, setDarkMode]= useState(false);
 
     const handleLogout = () => {
         logOutUser()
@@ -38,7 +40,6 @@ const Hader = () => {
                         <Nav.Link className='text-white'>
                             <Link className='text-white text-decoration-none' to='/faq' >FAQ</Link>
                         </Nav.Link>
-
                         {
                             user?.uid ?
                                 <>
@@ -62,19 +63,27 @@ const Hader = () => {
                         }
 
                         <Nav.Link>
-                           
                             {
                                 user?.photoURL ?
-                                <>
-                                    <Image title={user?.displayName} src={user?.photoURL} style={{height:'30px'}} roundedCircle > 
-                                    
-                                    </Image>
-                                </>
-                                : 
-                                <>
-                                    <FaUser></FaUser>
-                                </>
+                                    <>
+                                        <Image title={user?.displayName} src={user?.photoURL} style={{ height: '30px' }} roundedCircle >
+
+                                        </Image>
+                                    </>
+                                    :
+                                    <>
+                                        <FaUser></FaUser>
+                                    </>
                             }
+                        </Nav.Link>
+
+                        <Nav.Link>
+                            <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+                                <label className="switch">
+                                    <input type="checkbox" onChange={()=> setDarkMode(!darkMode)} />
+                                    <span className="slider round"></span>
+                                </label>
+                            </div>
 
                         </Nav.Link>
 
