@@ -51,7 +51,7 @@ const Register = () => {
     }
 
     return (
-        <Container className='w-25 border p-5 mt-5 rounded'>
+        <Container className=' border p-5 mt-5 rounded'>
             <Form onSubmit={handleSubmitFormRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>

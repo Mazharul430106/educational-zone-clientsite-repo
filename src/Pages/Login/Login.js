@@ -62,7 +62,7 @@ const Login = () => {
     }
 
     return (
-        <Container className='w-25 border p-3 pb-4 mt-5 rounded'>
+        <Container className=' border p-3 pb-4 mt-5 rounded'>
             <Form onSubmit={handleSubmitFormLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
