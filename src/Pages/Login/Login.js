@@ -29,7 +29,7 @@ const Login = () => {
                 form.reset();
                 console.log(user);
                 navigate(from, { replace: true });
-                
+
             })
             .catch(error => {
                 console.log('error', error);
@@ -62,29 +62,43 @@ const Login = () => {
     }
 
     return (
-        <Container className=' border p-3 pb-4 mt-5 rounded'>
-            <Form onSubmit={handleSubmitFormLogin}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter email" required />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Password" required />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Text className="text-danger">
-                        {error}
-                    </Form.Text>
-                </Form.Group>
-                <Button variant="primary" type="submit" className='w-100 mt-3'>
-                    Login
-                </Button>
-            </Form>
-            <Button onClick={handleSignInFacebook} variant="secondary" className='w-100 mt-2 mb-2'> <FaFacebook></FaFacebook> Login With Facebook</Button>
-            <Button onClick={handleSignInGoogle} variant="success" className='w-100 mb-2'> <FaGoogle></FaGoogle> Login With Google</Button>
-            <Link to='/register'>Please Register</Link>
-        </Container>
+        <div className='px-3'>
+            <div style={{
+                width: '100%',
+                maxWidth: '450px',
+                margin: '50px auto',
+                border: '1px solid black',
+                padding: '15px 20px',
+                borderRadius: '4px'
+            }}>
+                <div>
+                    <h1 className='text-center mb-3 '>Login Now</h1>
+                </div>
+
+                <Form onSubmit={handleSubmitFormLogin}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email" name='email' placeholder="Enter email" required />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" name='password' placeholder="Password" required />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Text className="text-danger">
+                            {error}
+                        </Form.Text>
+                    </Form.Group>
+                    <Button variant="primary" type="submit" className='w-100 mt-3'>
+                        Login
+                    </Button>
+                </Form>
+                <Button onClick={handleSignInFacebook} variant="secondary" className='w-100 mt-3 mb-3'> <FaFacebook></FaFacebook> Login With Facebook</Button>
+                <Button onClick={handleSignInGoogle} variant="success" className='w-100 mb-2'> <FaGoogle></FaGoogle> Login With Google</Button>
+                <Link to='/register'>Please Register</Link>
+            </div>
+        </div>
+
     );
 };
 

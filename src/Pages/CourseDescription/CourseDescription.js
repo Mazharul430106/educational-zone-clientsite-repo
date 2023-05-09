@@ -12,7 +12,7 @@ const CourseDescription = ({ course }) => {
                     <h6 className="card-title"><Link className='text-black text-decoration-none' to={`/checkout/${_id}`}>{title}</Link> </h6>
                     <p>{details.length > 50 ? <>{details.slice(0, 100)} <Link >Read More</Link>  </> : { details }}</p>
                     <p> <strong>Price : $</strong>{price} Tk</p>
-                    <Link to=''>
+                    <Link className='mx-auto' to=''>
                         <Button className='px-3'>Sign up for a course</Button>
                     </Link>
                 </div>
