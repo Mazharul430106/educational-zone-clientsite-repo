@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const CourseDescription = ({course}) => {
     const { title, picture,id } = course;
     return (
-        <div className="col">
+        <div className="col mt-5">
             <div className="card">
                 <img src={picture} style={{ height: '200px' }} className="card-img-top" alt="..." />
                 <div className="card-body">

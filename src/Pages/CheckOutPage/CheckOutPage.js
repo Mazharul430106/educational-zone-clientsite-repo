@@ -1,17 +1,17 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import { useLoaderData,Link } from 'react-router-dom';
+import { useLoaderData, Link } from 'react-router-dom';
 import { FaDownload } from 'react-icons/fa';
 
 const CheckOutPage = () => {
     const courseDetails = useLoaderData();
     const { details, picture, title, id } = courseDetails;
     return (
-        <Container>
+        <div className='px-5 mt-5'>
+
             <div className="card">
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <img src={picture} className="img-fluid h-100 rounded-start" alt="..."/>
+                        <img src={picture} className="img-fluid h-100 max-h-[350px] rounded-start" alt="..." />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
@@ -21,15 +21,16 @@ const CheckOutPage = () => {
                             </div>
 
                             <p>{details}</p>
-                            <div className='text-center'>
-                                <Link  className='border-0 text-decoration-none bg-secondary p-2 rounded ps-3 pe-3 text-white' to={`/checkInfo/${id}`}>Get Premium Access</Link>
+                            <div className='text-center mt-5'>
+                                <Link className='border-0 text-decoration-none bg-secondary p-3 rounded ps-3 pe-3 text-white' to={`/checkInfo/${id}`}>Get Premium Access</Link>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-        </Container>
+        </div>
+
     );
 };
 

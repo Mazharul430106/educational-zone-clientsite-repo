@@ -1,14 +1,15 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { useLoaderData } from "react-router-dom";
 import CoursesDetails from '../CoursesDetails/CoursesDetails';
 import Teachers from '../Teachers/Teachers';
 import CarouselSlider from '../../Components/CarouselSlider/CarouselSlider';
+import Contact from '../Contact/Contact';
+
 
 
 const Home = () => {
     const allCourses = useLoaderData();
-    console.log(allCourses);
+    // console.log(allCourses);
 
     return (
 
@@ -18,7 +19,7 @@ const Home = () => {
 
             <div className='services-section px-5'>
                 <div>
-                    <h1 className='text-center pt-2 pb-3'>Our Popular Courses</h1>
+                    <h1 className='text-center pt-5 pb-3'>Our Popular Courses</h1>
                 </div>
 
                 <div className='row row-cols-1 row-cols-lg-3 g-4 mb-3'>
@@ -29,6 +30,8 @@ const Home = () => {
             </div>
 
             <Teachers></Teachers>
+            <Contact></Contact>
+          
         </div>
 
 
