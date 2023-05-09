@@ -4,6 +4,7 @@ import CoursesDetails from '../CoursesDetails/CoursesDetails';
 import Teachers from '../Teachers/Teachers';
 import CarouselSlider from '../../Components/CarouselSlider/CarouselSlider';
 import Contact from '../Contact/Contact';
+import Faq from '../Faq/Faq';
 
 
 
@@ -26,8 +27,12 @@ const Home = () => {
                     }
                 </div>
             </div>
-
+            
             <Teachers></Teachers>
+            
+            <Faq></Faq>
+
+
             <Contact></Contact>
           
           
