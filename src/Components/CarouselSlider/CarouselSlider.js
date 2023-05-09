@@ -5,7 +5,7 @@ import { CarouselItem } from 'react-bootstrap';
 const slideItems = [
     {
         "img": "https://i.ibb.co/jTZ81Mx/slide1.jpg",
-        "title": "Creative Thinking & Innovation",
+        "title": "Large educational programs",
         "desc": "Proactively utilize open-source users for process-centric total linkage Energistically reinvent web-enabled initiatives with premium processes. Proactively drive.",
     },
 

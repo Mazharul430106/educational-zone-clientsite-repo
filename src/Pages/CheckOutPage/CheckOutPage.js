@@ -4,7 +4,8 @@ import { FaDownload } from 'react-icons/fa';
 
 const CheckOutPage = () => {
     const courseDetails = useLoaderData();
-    const { details, picture, title, id } = courseDetails;
+    const { details, picture, title, _id } = courseDetails;
+    console.log(courseDetails)
     return (
         <div className='px-5 mt-5'>
 
@@ -19,12 +20,11 @@ const CheckOutPage = () => {
                                 <h5 className="card-title">{title}</h5>
                                 <FaDownload></FaDownload>
                             </div>
-
+                            
                             <p>{details}</p>
                             <div className='text-center mt-5'>
-                                <Link className='border-0 text-decoration-none bg-secondary p-3 rounded ps-3 pe-3 text-white' to={`/checkInfo/${id}`}>Get Premium Access</Link>
+                                <Link className='border-0 text-decoration-none bg-secondary p-3 rounded ps-3 pe-3 text-white' to=''>Get Premium Access</Link>
                             </div>
-
                         </div>
                     </div>
                 </div>

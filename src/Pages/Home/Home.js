@@ -12,9 +12,7 @@ const Home = () => {
     // console.log(allCourses);
 
     return (
-
         <div>
-
             <CarouselSlider></CarouselSlider>
 
             <div className='services-section px-5'>
@@ -31,6 +29,7 @@ const Home = () => {
 
             <Teachers></Teachers>
             <Contact></Contact>
+          
           
         </div>
 
