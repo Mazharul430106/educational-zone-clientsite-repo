@@ -9,7 +9,7 @@ const Footer = () => {
                 <div>
                     <div>
                         <div>
-                            
+
                             <h3>Educational Zone</h3>
                         </div>
                         <p>Curabitur non libero at lorem finibus lobortis. Ut auctor egestas pretium. Proin nunc ligula, venenatis tempor</p>
@@ -23,6 +23,7 @@ const Footer = () => {
                             justifyContent: 'center',
                             borderRadius: '50%',
                             background: 'white',
+                            color:'black'
                         }}>
                             <FaFacebookF className=''></FaFacebookF>
                         </Link>
@@ -35,6 +36,7 @@ const Footer = () => {
                             justifyContent: 'center',
                             borderRadius: '50%',
                             background: 'white',
+                            color:'black'
                         }}>
                             <FaYoutube className=''></FaYoutube>
                         </Link>
@@ -46,6 +48,7 @@ const Footer = () => {
                             justifyContent: 'center',
                             borderRadius: '50%',
                             background: 'white',
+                            color:'black'
                         }}>
                             <FaLinkedinIn></FaLinkedinIn>
                         </Link>
@@ -57,6 +60,7 @@ const Footer = () => {
                             justifyContent: 'center',
                             borderRadius: '50%',
                             background: 'white',
+                            color:'black'
                         }}>
                             <FaTwitter className=''></FaTwitter>
                         </Link>

@@ -6,8 +6,8 @@ const Faq = () => {
         <div>
             <div style={{
                 width: '100%',
-                maxWidth: '1000px',
-                margin: '50px auto',
+                maxWidth: '1200px',
+                margin: '0px auto',
                 padding: '15px 20px',
                 borderRadius: '4px'
             }}>

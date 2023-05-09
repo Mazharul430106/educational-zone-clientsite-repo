@@ -7,7 +7,7 @@ const TramsAndConditions = () => {
         <div>
             <Container>
                 <h3>Please Folow The Trams And Conditions</h3>
-                <Link to='/register'>Please Register</Link>
+                <Link to='/register' className='text-info'>Please Register</Link>
             </Container>   
         </div>
     );

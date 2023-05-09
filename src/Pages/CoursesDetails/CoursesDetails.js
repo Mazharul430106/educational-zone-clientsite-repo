@@ -10,10 +10,10 @@ const CoursesDetails = ({ course }) => {
                 <div className="card-body">
                     <h5 className="card-title"><Link to={`/checkout/${_id}`} className='text-black text-decoration-none'>{title}</Link></h5>
                     <p className='card-text'>
-                        {details.length > 50 ? <>{details.slice(0, 100) } <Link to={`/checkout/${_id}`}> read more</Link></> : <>{details}</>  }
+                        {details.length > 50 ? <>{details.slice(0, 100) } <Link to={`/checkout/${_id}`} className='text-info text-decoration-none' > read more...</Link></> : <>{details}</>  }
                     </p>
                     <p>
-                       <span className='fw-bold'>Price:</span> {price} Tk
+                       <span className='fw-bold text-info'>Price:</span> {price} Tk
                     </p>
                 </div>
             </div>

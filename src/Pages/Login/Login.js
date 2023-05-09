@@ -63,16 +63,16 @@ const Login = () => {
 
     return (
         <div className='px-3'>
-            <div style={{
+            <div className='shadow-lg' style={{
                 width: '100%',
                 maxWidth: '450px',
                 margin: '50px auto',
-                border: '1px solid black',
                 padding: '15px 20px',
+                paddingBottom: '20px',
                 borderRadius: '4px'
             }}>
                 <div>
-                    <h1 className='text-center mb-3 '>Login Now</h1>
+                    <h2 className='text-center mb-3 '>Login Now</h2>
                 </div>
 
                 <Form onSubmit={handleSubmitFormLogin}>
@@ -89,13 +89,13 @@ const Login = () => {
                             {error}
                         </Form.Text>
                     </Form.Group>
-                    <Button variant="primary" type="submit" className='w-100 mt-3'>
+                    <Button variant="info" type="submit" className='w-100 mt-3 text-white fw-semibold'>
                         Login
                     </Button>
                 </Form>
-                <Button onClick={handleSignInFacebook} variant="secondary" className='w-100 mt-3 mb-3'> <FaFacebook></FaFacebook> Login With Facebook</Button>
-                <Button onClick={handleSignInGoogle} variant="success" className='w-100 mb-2'> <FaGoogle></FaGoogle> Login With Google</Button>
-                <Link to='/register'>Please Register</Link>
+                <Button onClick={handleSignInFacebook} variant="secondary" className='w-100 mt-3 mb-3 fw-semibold'> <FaFacebook></FaFacebook> Login With Facebook</Button>
+                <Button onClick={handleSignInGoogle} variant="success" className='w-100 mb-2 fw-semibold'> <FaGoogle></FaGoogle> Login With Google</Button>
+                <Link to='/register' className='text-info'>Please Register</Link>
             </div>
         </div>
 

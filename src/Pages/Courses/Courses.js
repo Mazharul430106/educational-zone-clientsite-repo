@@ -10,7 +10,7 @@ const Courses = () => {
 
         <div className='row px-5 pt-4'>
             <div className='col-lg-3'>
-                <h5 className='pb-3'><Link className=' text-decoration-none text-black' to=''>Web Design</Link></h5>
+                <h5 className='pb-3 pt-3'><Link className=' text-decoration-none text-black' to=''>Web Design</Link></h5>
                 <h5 className='pb-3'><Link className=' text-decoration-none text-black' to=''>Web Development</Link></h5>
                 <h5 className='pb-3'><Link className=' text-decoration-none text-black' to=''>Grapich Design</Link></h5>
                 <h5 className='pb-3'><Link className=' text-decoration-none text-black' to=''>Desitial Marketing</Link></h5>

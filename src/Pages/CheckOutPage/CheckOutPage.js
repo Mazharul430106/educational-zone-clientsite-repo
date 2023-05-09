@@ -20,10 +20,10 @@ const CheckOutPage = () => {
                                 <h5 className="card-title">{title}</h5>
                                 <FaDownload></FaDownload>
                             </div>
-                            
+
                             <p>{details}</p>
                             <div className='text-center mt-5'>
-                                <Link className='border-0 text-decoration-none bg-secondary p-3 rounded ps-3 pe-3 text-white' to=''>Get Premium Access</Link>
+                                <Link className='border-0 text-decoration-none bg-info p-3 rounded ps-3 pe-3 text-white fw-semibold' to=''>Get Premium Access</Link>
                             </div>
                         </div>
                     </div>

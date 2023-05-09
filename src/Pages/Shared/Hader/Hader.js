@@ -28,36 +28,35 @@ const Hader = () => {
             <Image src={Logo} style={{ height: '50px', marginRight: '10px' }} ></Image>
             <Navbar.Brand className='text-white'>
                 <Nav.Link>
-                    <Link className='text-white text-decoration-none' to='/'>Educational Zone</Link>
+                    <Link className='text-white text-decoration-none fs-4' to='/'>Educational Zone</Link>
                 </Nav.Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto">
                     <Nav.Link className='text-white'>
-                        <Link className='text-white text-decoration-none' to='/courses' >Courses</Link>
+                        <Link className='text-white text-decoration-none fs-5' to='/courses' >Courses</Link>
                     </Nav.Link>
                     <Nav.Link className='text-white'>
-                        <Link className='text-white text-decoration-none' to='/blog'>Blog</Link>
+                        <Link className='text-white text-decoration-none fs-5' to='/blog'>Blog</Link>
                     </Nav.Link>
                     <Nav.Link className='text-white'>
-                        <Link className='text-white text-decoration-none' to='/faq' >FAQ</Link>
+                        <Link className='text-white text-decoration-none fs-5' to='/faq' >Faq</Link>
                     </Nav.Link>
                     {
                         user?.uid ?
                             <>
-
                                 <Nav.Link>
-                                    <Link onClick={handleLogout} className='text-white text-decoration-none'>Logout</Link>
+                                    <Link onClick={handleLogout} className='text-white text-decoration-none fs-5'>Logout</Link>
                                 </Nav.Link>
                             </>
                             :
                             <>
                                 <Nav.Link className='text-white'>
-                                    <Link className='text-white text-decoration-none' to='/register'>Register</Link>
+                                    <Link className='text-white text-decoration-none fs-5' to='/register'>Register</Link>
                                 </Nav.Link>
                                 <Nav.Link className='text-white'>
-                                    <Link className='text-white text-decoration-none' to='/login'>Login</Link>
+                                    <Link className='text-white text-decoration-none fs-5' to='/login'>Login</Link>
                                 </Nav.Link>
                             </>
                     }
@@ -72,12 +71,12 @@ const Hader = () => {
                                 </>
                                 :
                                 <>
-                                    <FaUser></FaUser>
+                                    <FaUser className='text-white'></FaUser>
                                 </>
                         }
                     </Nav.Link>
 
-                    <Nav.Link>
+                    {/* <Nav.Link>
                         <div className={darkMode ? 'dark-mode' : 'light-mode'}>
                             <label className="switch">
                                 <input type="checkbox" onChange={() => setDarkMode(!darkMode)} />
@@ -85,7 +84,7 @@ const Hader = () => {
                             </label>
                         </div>
 
-                    </Nav.Link>
+                    </Nav.Link> */}
 
                 </Nav>
             </Navbar.Collapse>

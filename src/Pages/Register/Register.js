@@ -52,14 +52,18 @@ const Register = () => {
 
     return (
         <div>
-            <div style={{
+            <div className='shadow-lg' style={{
                 width: '100%',
                 maxWidth: '450px',
                 margin: '50px auto',
-                border: '1px solid black',
                 padding: '15px 20px',
+                paddingBottom: '30px',
                 borderRadius: '4px'
             }}>
+
+                <div>
+                    <h2 className='text-center'>Register Now</h2>
+                </div>
 
                 <Form onSubmit={handleSubmitFormRegister}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -87,10 +91,10 @@ const Register = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" onClick={handleChecked} label={<>Acepte <Link to='/trams'>Trams And Conditions</Link> </>} />
+                        <Form.Check type="checkbox" onClick={handleChecked} label={<>Acepte <Link to='/trams' className='text-info'>Trams And Conditions</Link> </>} />
                     </Form.Group>
 
-                    <Button className='w-100' variant="primary" type="submit" disabled={!acepte}>
+                    <Button className='w-100 fw-semibold text-white' variant="info" type="submit" disabled={!acepte}>
                         Register
                     </Button>
                 </Form>

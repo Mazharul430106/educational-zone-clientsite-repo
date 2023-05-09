@@ -10,6 +10,7 @@ import Login from "../../Login/Login";
 import Register from "../../Register/Register";
 import TramsAndConditions from "../../TramsAndConditions/TramsAndConditions";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import CourseRegistation from "../../CourseRegistation/CourseRegistation";
 
 export const routes = createBrowserRouter([
     {
@@ -48,14 +49,21 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                element: <CheckOutPage></CheckOutPage>,
+                element: <PrivateRoute><CheckOutPage></CheckOutPage></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/ourcourses/${params.id}`)
             },
+
             {
-                path: '/checkInfo/:id',
-                element: <PrivateRoute><CheckOutInfo></CheckOutInfo></PrivateRoute> ,
-                loader: ({params})=> fetch(`https://educanal-server-site-assignment.vercel.app/${params.id}`)
+                path:'/courseRegister/:id',
+                element:<CourseRegistation></CourseRegistation>,
+                loader: ({params})=> fetch(`http://localhost:5000/ourcourses/${params.id}`)
             }
+
+            // {
+            //     path: '/checkInfo/:id',
+            //     element: <PrivateRoute><CheckOutInfo></CheckOutInfo></PrivateRoute> ,
+            //     loader: ({params})=> fetch(`https://educanal-server-site-assignment.vercel.app/${params.id}`)
+            // }
 
 
         ]
