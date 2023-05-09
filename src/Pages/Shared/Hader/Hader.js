@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
 import Logo from '../../../assets/Logo/Logo.png';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
@@ -11,9 +11,9 @@ import { FaUser } from "react-icons/fa";
 
 const Hader = () => {
     const { user, logOutUser } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
 
-    const [darkMode, setDarkMode]= useState(false);
+    const [darkMode, setDarkMode] = useState(false);
 
     const handleLogout = () => {
         logOutUser()
@@ -24,72 +24,72 @@ const Hader = () => {
     }
 
     return (
-        <Navbar bg="secondary" expand="lg" className='mb-3' >
-            <Container>
-                <Image src={Logo} style={{ height: '50px', marginRight: '10px' }} ></Image>
-                <Navbar.Brand className='text-white' href="#home">Educational Zone</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Nav.Link className='text-white'>
-                            <Link className='text-white text-decoration-none' to='/courses' >Courses</Link>
-                        </Nav.Link>
-                        <Nav.Link className='text-white'>
-                            <Link className='text-white text-decoration-none' to='/blog'>Blog</Link>
-                        </Nav.Link>
-                        <Nav.Link className='text-white'>
-                            <Link className='text-white text-decoration-none' to='/faq' >FAQ</Link>
-                        </Nav.Link>
-                        {
-                            user?.uid ?
-                                <>
-                                    <Nav.Link className='text-white'>
-                                        {user?.displayName}
-                                    </Nav.Link>
+        <Navbar bg="secondary" expand="lg" className='px-5'>
+            <Image src={Logo} style={{ height: '50px', marginRight: '10px' }} ></Image>
+            <Navbar.Brand className='text-white'>
+                <Nav.Link>
+                    <Link className='text-white text-decoration-none' to='/'>Educational Zone</Link>
+                </Nav.Link>
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="ms-auto">
+                    <Nav.Link className='text-white'>
+                        <Link className='text-white text-decoration-none' to='/courses' >Courses</Link>
+                    </Nav.Link>
+                    <Nav.Link className='text-white'>
+                        <Link className='text-white text-decoration-none' to='/blog'>Blog</Link>
+                    </Nav.Link>
+                    <Nav.Link className='text-white'>
+                        <Link className='text-white text-decoration-none' to='/faq' >FAQ</Link>
+                    </Nav.Link>
+                    {
+                        user?.uid ?
+                            <>
 
-                                    <Nav.Link>
-                                        <Link onClick={handleLogout} className='text-white text-decoration-none'>Logout</Link>
-                                    </Nav.Link>
+                                <Nav.Link>
+                                    <Link onClick={handleLogout} className='text-white text-decoration-none'>Logout</Link>
+                                </Nav.Link>
+                            </>
+                            :
+                            <>
+                                <Nav.Link className='text-white'>
+                                    <Link className='text-white text-decoration-none' to='/register'>Register</Link>
+                                </Nav.Link>
+                                <Nav.Link className='text-white'>
+                                    <Link className='text-white text-decoration-none' to='/login'>Login</Link>
+                                </Nav.Link>
+                            </>
+                    }
+
+                    <Nav.Link>
+                        {
+                            user?.photoURL ?
+                                <>
+                                    <Image title={user?.displayName} src={user?.photoURL} style={{ height: '30px' }} roundedCircle >
+
+                                    </Image>
                                 </>
                                 :
                                 <>
-                                    <Nav.Link className='text-white'>
-                                        <Link className='text-white text-decoration-none' to='/register'>Register</Link>
-                                    </Nav.Link>
-                                    <Nav.Link className='text-white'>
-                                        <Link className='text-white text-decoration-none' to='/login'>Login</Link>
-                                    </Nav.Link>
+                                    <FaUser></FaUser>
                                 </>
                         }
+                    </Nav.Link>
 
-                        <Nav.Link>
-                            {
-                                user?.photoURL ?
-                                    <>
-                                        <Image title={user?.displayName} src={user?.photoURL} style={{ height: '30px' }} roundedCircle >
+                    <Nav.Link>
+                        <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+                            <label className="switch">
+                                <input type="checkbox" onChange={() => setDarkMode(!darkMode)} />
+                                <span className="slider round"></span>
+                            </label>
+                        </div>
 
-                                        </Image>
-                                    </>
-                                    :
-                                    <>
-                                        <FaUser></FaUser>
-                                    </>
-                            }
-                        </Nav.Link>
+                    </Nav.Link>
 
-                        <Nav.Link>
-                            <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-                                <label className="switch">
-                                    <input type="checkbox" onChange={()=> setDarkMode(!darkMode)} />
-                                    <span className="slider round"></span>
-                                </label>
-                            </div>
+                </Nav>
+            </Navbar.Collapse>
 
-                        </Nav.Link>
-
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
         </Navbar>
     );
 };

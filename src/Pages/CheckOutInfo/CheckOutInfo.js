@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-
 import { useLoaderData } from 'react-router-dom';
 
 const CheckOutInfo = () => {
     const checkInfo = useLoaderData();
+    console.log(checkInfo);
     const {title, id, price} = checkInfo;
 
     return (
