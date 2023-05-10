@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../../Layout/Main";
 import Blog from "../../Blog/Blog";
-import CheckOutInfo from "../../CheckOutInfo/CheckOutInfo";
 import CheckOutPage from "../../CheckOutPage/CheckOutPage";
 import Courses from "../../Courses/Courses";
 import Faq from "../../Faq/Faq";
@@ -12,6 +11,7 @@ import TramsAndConditions from "../../TramsAndConditions/TramsAndConditions";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CourseRegistation from "../../CourseRegistation/CourseRegistation";
 import MyCourses from "../../MyCourses/MyCourses";
+import MyReviews from "../../MyReviews/MyReviews";
 
 export const routes = createBrowserRouter([
     {
@@ -61,17 +61,12 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/myCourses',
-                element:<MyCourses></MyCourses>
+                element:<PrivateRoute><MyCourses></MyCourses></PrivateRoute>
+            },
+            {
+                path: '/myReviews',
+                element:<PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             }
-
-
-
-            // {
-            //     path: '/checkInfo/:id',
-            //     element: <PrivateRoute><CheckOutInfo></CheckOutInfo></PrivateRoute> ,
-            //     loader: ({params})=> fetch(`https://educanal-server-site-assignment.vercel.app/${params.id}`)
-            // }
-
 
         ]
     },

@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 
 const CheckOutPage = () => {
     const { user } = useContext(AuthContext);
@@ -15,13 +16,28 @@ const CheckOutPage = () => {
 
     const { register, handleSubmit } = useForm();
 
-    const handleReview = (data) => {
-        console.log(data)
+    const handleReview = (data, e) => {
+        // console.log(data)
+
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+                if (data.acknowledged) {
+                    toast.success('Review Added Successfully')
+                }
+                e.target.reset();
+
+            })
+
     }
-
-
-
-
 
 
     return (
@@ -79,9 +95,15 @@ const CheckOutPage = () => {
                             </Form.Group>
                         </div>
                     </div>
+
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Course Title</Form.Label>
+                        <Form.Control type="text" {...register('title', { required: true })} name='title' defaultValue={courseDetails?.title} readOnly placeholder="Enter title" />
+                    </Form.Group>
+
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Message</Form.Label>
-                        <textarea maxLength={80} minLength={20} {...register('message', {required: true})} name='message' class="form-control" id="exampleFormControlTextarea1" placeholder='Type Your Message' rows="8"></textarea>
+                        <textarea maxLength={80} minLength={20} {...register('message', { required: true })} name='message' class="form-control" id="exampleFormControlTextarea1" placeholder='Type Your Message' rows="8"></textarea>
                     </Form.Group>
 
                     <Button variant="info" className='text-white fw-semibold' type="submit" style={{

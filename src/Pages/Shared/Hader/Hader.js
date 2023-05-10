@@ -43,6 +43,9 @@ const Hader = () => {
                         <Link className='text-white text-decoration-none fs-5' to='/faq' >Faq</Link>
                     </Nav.Link>
                     <Nav.Link className='text-white'>
+                        <Link className='text-white text-decoration-none fs-5' to='/myReviews' >My Reviews</Link>
+                    </Nav.Link>
+                    <Nav.Link className='text-white'>
                         <Link className='text-white text-decoration-none fs-5' to='/myCourses' >My Courses</Link>
                     </Nav.Link>
                     {

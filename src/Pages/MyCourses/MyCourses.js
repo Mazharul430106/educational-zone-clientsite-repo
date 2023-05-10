@@ -17,6 +17,11 @@ const MyCourses = () => {
     return (
         <div className='px-5 mt-5'>
 
+            <div>
+                <h1 className='text-center mb-5'>Booking Courses</h1>
+            </div>
+
+
             <Table striped bordered hover>
                 <thead>
                     <tr>
