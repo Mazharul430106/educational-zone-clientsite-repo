@@ -4,12 +4,26 @@ import { FaDownload } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../Contexts/AuthProvider';
+import { useForm } from 'react-hook-form';
 
 const CheckOutPage = () => {
     const { user } = useContext(AuthContext);
     const courseDetails = useLoaderData();
     const { details, picture, title, _id, duration, price } = courseDetails;
     // console.log(courseDetails)
+
+
+    const { register, handleSubmit } = useForm();
+
+    const handleReview = (data) => {
+        console.log(data)
+    }
+
+
+
+
+
+
     return (
         <div className='px-5 mt-5'>
 
@@ -50,24 +64,24 @@ const CheckOutPage = () => {
             {/* Review section */}
             <div className='mt-5'>
                 <h2>Leave a Comment</h2>
-                <Form>
+                <Form onSubmit={handleSubmit(handleReview)}>
                     <div className='row row-cols-1 row-cols-md-2 row-cols-lg-2 g-2 '>
                         <div>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" defaultValue={user?.email} readOnly placeholder="Enter email" />
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control type="text" {...register('name', { required: true })} name='name' defaultValue={user?.displayName} readOnly placeholder="Enter email" />
                             </Form.Group>
                         </div>
                         <div>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label>Name</Form.Label>
-                                <Form.Control type="email" defaultValue={user?.displayName} readOnly placeholder="Enter email" />
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control type="email" {...register('email', { required: true })} name='email' defaultValue={user?.email} readOnly placeholder="Enter email" />
                             </Form.Group>
                         </div>
                     </div>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Message</Form.Label>
-                        <textarea name='message' class="form-control" id="exampleFormControlTextarea1" placeholder='Type Your Message' rows="8"></textarea>
+                        <textarea maxLength={80} minLength={20} {...register('message', {required: true})} name='message' class="form-control" id="exampleFormControlTextarea1" placeholder='Type Your Message' rows="8"></textarea>
                     </Form.Group>
 
                     <Button variant="info" className='text-white fw-semibold' type="submit" style={{
@@ -78,11 +92,7 @@ const CheckOutPage = () => {
                     </Button>
                 </Form>
 
-
-
             </div>
-
-
         </div>
 
     );

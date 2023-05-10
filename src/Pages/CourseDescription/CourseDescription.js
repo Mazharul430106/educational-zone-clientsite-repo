@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CourseDescription = ({ course }) => {
     const { title, picture, _id, details, price, duration } = course;
-    console.log(course)
+    // console.log(course)
     return (
         <div className="col mt-5">
             <div className="card">
@@ -18,7 +18,7 @@ const CourseDescription = ({ course }) => {
                         <p><strong className='text-info'>Duration :</strong> {duration} Month </p>
                     </div>
                     <Link className='' to={`/courseRegister/${_id}`}>
-                        <Button variant='info' className='px-3 text-white fw-semibold w-100'>Sign up for a course</Button>
+                        <Button variant='info' className='px-3 text-white fw-semibold w-100'>Course Booking</Button>
                     </Link>
                 </div>
             </div>

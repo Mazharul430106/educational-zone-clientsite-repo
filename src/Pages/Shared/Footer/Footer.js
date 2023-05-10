@@ -73,27 +73,24 @@ const Footer = () => {
                     <Link to='' className='text-decoration-none d-block text-black text-white pb-1'>Contact Us</Link>
                     <Link to='' className='text-decoration-none d-block text-black text-white pb-1'>All Courses</Link>
                     <Link to='' className='text-decoration-none d-block text-black text-white pb-1'>From the Blog</Link>
-                    <Link to='' className='text-decoration-none d-block text-black text-white pb-1'>Faq</Link>
+                    <Link to='' className='text-decoration-none d-block text-black text-white pb-1 mb-3'>Faq</Link>
                 </div>
                 <div>
-                    <h3>Popular Courses</h3>
+                    <h3 className=''>Popular Courses</h3>
                     <Link className='text-decoration-none d-block text-black text-white pb-1'>Web Design</Link>
                     <Link className='text-decoration-none d-block text-black text-white pb-1'>Web Development</Link>
                     <Link className='text-decoration-none d-block text-black text-white pb-1'>Web Graphic Design & Development</Link>
                     <Link className='text-decoration-none d-block text-black text-white pb-1'>Degital Marketaing</Link>
                     <Link className='text-decoration-none d-block text-black text-white pb-1'>Software Development</Link>
-                    <Link className='text-decoration-none d-block text-black text-white pb-1'>UX UI Design</Link>
+                    <Link className='text-decoration-none d-block text-black text-white pb-1 mb-3'>UX UI Design</Link>
                 </div>
                 <div>
                     <h3>Contact</h3>
-
                     <div>
                         <Link className='text-decoration-none text-white d-block pb-1'>Address : Mirpur 10 House - 312 </Link>
                         <Link className='text-decoration-none text-white d-block pb-1'>Email : educationalZone@gmail.com</Link>
                         <Link className='text-decoration-none text-white d-block pb-1'>Phone : +91 555 668 986</Link>
                     </div>
-
-
                 </div>
             </div>
         </div>
