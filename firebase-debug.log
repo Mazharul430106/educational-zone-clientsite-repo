@@ -1,0 +1,195 @@
+[debug] [2023-05-10T13:25:52.882Z] ----------------------------------------------------------------------
+[debug] [2023-05-10T13:25:52.886Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\Mazharul\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-05-10T13:25:52.887Z] CLI Version:   11.30.0
+[debug] [2023-05-10T13:25:52.887Z] Platform:      win32
+[debug] [2023-05-10T13:25:52.887Z] Node Version:  v18.15.0
+[debug] [2023-05-10T13:25:52.889Z] Time:          Wed May 10 2023 19:25:52 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-05-10T13:25:52.889Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-10T13:25:52.930Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-05-10T13:25:53.189Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-10T13:25:53.190Z] > authorizing via signed-in user (shrabonahamed106@gmail.com)
+[debug] [2023-05-10T13:25:53.190Z] [iam] checking project educational-project-assignment for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-10T13:25:53.192Z] > refreshing access token with scopes: []
+[debug] [2023-05-10T13:25:53.194Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-05-10T13:25:53.194Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-10T13:25:55.806Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-05-10T13:25:55.808Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-10T13:25:55.890Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions [none]
+[debug] [2023-05-10T13:25:55.890Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions x-goog-quota-user=projects/educational-project-assignment
+[debug] [2023-05-10T13:25:55.891Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-10T13:25:56.012Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-05-10T13:25:56.012Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-05-10T13:25:58.969Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions 200
+[debug] [2023-05-10T13:25:58.969Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-10T13:25:58.973Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment [none]
+[debug] [2023-05-10T13:26:01.370Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment 200
+[debug] [2023-05-10T13:26:01.370Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment {"projectId":"educational-project-assignment","projectNumber":"847345081106","displayName":"educational-project-assignment","name":"projects/educational-project-assignment","resources":{"hostingSite":"educational-project-assignment"},"state":"ACTIVE","etag":"1_d8fe07b8-9909-4288-b70e-1d1f651239f9"}
+[info] 
+[info] === Deploying to 'educational-project-assignment'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-05-10T13:26:01.387Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/educational-project-assignment/versions [none]
+[debug] [2023-05-10T13:26:01.387Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/educational-project-assignment/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-05-10T13:26:04.493Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/educational-project-assignment/versions 200
+[debug] [2023-05-10T13:26:04.494Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/educational-project-assignment/versions {"name":"projects/847345081106/sites/educational-project-assignment/versions/0010a9298ba42f45","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[educational-project-assignment]: beginning deploy... 
+[info] i  hosting[educational-project-assignment]: found 15 files in build 
+[debug] [2023-05-10T13:26:04.517Z] [hosting] uploading with 200 concurrency
+[debug] [2023-05-10T13:26:05.059Z] [hosting] hash cache [YnVpbGQ] stored for 15 files
+[debug] [2023-05-10T13:26:05.060Z] [hosting][hash queue][FINAL] {"max":493,"min":3,"avg":60.4,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":503}
+[debug] [2023-05-10T13:26:05.060Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/847345081106/sites/educational-project-assignment/versions/0010a9298ba42f45:populateFiles [none]
+[debug] [2023-05-10T13:26:05.061Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/847345081106/sites/educational-project-assignment/versions/0010a9298ba42f45:populateFiles {"files":{"/favicon.ico":"267de374daa72905f19c223b4cb3126818d7b15f6e541e926d3dc51836a68fe9","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/asset-manifest.json":"5bd8856de15273cb2e85096259cbb41fbe067edf2eebffc5353be2e8cc7ccd03","/index.html":"d4329fb980ab01ebf8a82f80b60e5a36eb0ecd9aa23d07d10d8d83b850a367c7","/static/js/787.d594d909.chunk.js":"bc84dfbc5e33fbc47cf066b56554cb889b51e878c08f850c6b2b22aabcd11243","/static/js/787.d594d909.chunk.js.map":"18720b5b986d46e3187e7e3c98c91c488b067af139730986ea63c948538b223d","/static/js/main.5ae569f3.js.LICENSE.txt":"1a2b94732ee07b5b8b1a00815d2d007bbefb4911140bb64bf9685035ac1ab7e0","/static/css/main.57c86763.css":"06b068d7fec718e77f63ca0dbb0c77868c103b0f96a03d6cad3464fee37447de","/static/media/Logo.bdb6455bfe12c5520fdf.png":"267de374daa72905f19c223b4cb3126818d7b15f6e541e926d3dc51836a68fe9","/static/js/main.5ae569f3.js":"9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0","/static/css/main.57c86763.css.map":"82f549584f8b18304182240fdab1b674d62a5f953713dd56cd273d2a9f262091","/static/js/main.5ae569f3.js.map":"33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f"}}
+[debug] [2023-05-10T13:26:07.294Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/847345081106/sites/educational-project-assignment/versions/0010a9298ba42f45:populateFiles 200
+[debug] [2023-05-10T13:26:07.294Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/847345081106/sites/educational-project-assignment/versions/0010a9298ba42f45:populateFiles {"uploadRequiredHashes":["d4329fb980ab01ebf8a82f80b60e5a36eb0ecd9aa23d07d10d8d83b850a367c7","33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f","9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0","5bd8856de15273cb2e85096259cbb41fbe067edf2eebffc5353be2e8cc7ccd03"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files"}
+[debug] [2023-05-10T13:26:07.297Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/d4329fb980ab01ebf8a82f80b60e5a36eb0ecd9aa23d07d10d8d83b850a367c7 [none]
+[debug] [2023-05-10T13:26:07.297Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/d4329fb980ab01ebf8a82f80b60e5a36eb0ecd9aa23d07d10d8d83b850a367c7 [stream]
+[debug] [2023-05-10T13:26:07.301Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f [none]
+[debug] [2023-05-10T13:26:07.301Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f [stream]
+[debug] [2023-05-10T13:26:07.305Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [none]
+[debug] [2023-05-10T13:26:07.305Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [stream]
+[debug] [2023-05-10T13:26:07.308Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/5bd8856de15273cb2e85096259cbb41fbe067edf2eebffc5353be2e8cc7ccd03 [none]
+[debug] [2023-05-10T13:26:07.308Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/5bd8856de15273cb2e85096259cbb41fbe067edf2eebffc5353be2e8cc7ccd03 [stream]
+[debug] [2023-05-10T13:26:07.311Z] [hosting][populate queue][FINAL] {"max":2240,"min":2240,"avg":2240,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2254}
+[debug] [2023-05-10T13:26:07.312Z] [hosting] uploads queued: 4
+[debug] [2023-05-10T13:26:15.254Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/d4329fb980ab01ebf8a82f80b60e5a36eb0ecd9aa23d07d10d8d83b850a367c7 200
+[debug] [2023-05-10T13:26:15.254Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/d4329fb980ab01ebf8a82f80b60e5a36eb0ecd9aa23d07d10d8d83b850a367c7 [stream]
+[debug] [2023-05-10T13:26:16.233Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/5bd8856de15273cb2e85096259cbb41fbe067edf2eebffc5353be2e8cc7ccd03 200
+[debug] [2023-05-10T13:26:16.233Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/5bd8856de15273cb2e85096259cbb41fbe067edf2eebffc5353be2e8cc7ccd03 [stream]
+[debug] [2023-05-10T13:26:37.705Z] [uploadQueue] Retrying task 9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0
+[debug] [2023-05-10T13:26:37.706Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [none]
+[debug] [2023-05-10T13:26:37.706Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [stream]
+[debug] [2023-05-10T13:27:08.526Z] [uploadQueue] Retrying task 9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0
+[debug] [2023-05-10T13:27:08.527Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [none]
+[debug] [2023-05-10T13:27:08.527Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [stream]
+[debug] [2023-05-10T13:27:14.718Z] [uploadQueue] Retrying task 33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f
+[debug] [2023-05-10T13:27:14.720Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f [none]
+[debug] [2023-05-10T13:27:14.720Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f [stream]
+[debug] [2023-05-10T13:27:31.168Z] [uploadQueue] Retrying task 9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0
+[debug] [2023-05-10T13:27:31.169Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [none]
+[debug] [2023-05-10T13:27:31.170Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [stream]
+[debug] [2023-05-10T13:27:36.559Z] [uploadQueue] Retrying task 33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f
+[debug] [2023-05-10T13:27:36.560Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f [none]
+[debug] [2023-05-10T13:27:36.560Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f [stream]
+[debug] [2023-05-10T13:27:55.436Z] [uploadQueue] Retrying task 9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0
+[debug] [2023-05-10T13:27:55.438Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [none]
+[debug] [2023-05-10T13:27:55.438Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [stream]
+[debug] [2023-05-10T13:27:59.213Z] [uploadQueue] Retrying task 33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f
+[debug] [2023-05-10T13:27:59.214Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f [none]
+[debug] [2023-05-10T13:27:59.215Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f [stream]
+[debug] [2023-05-10T13:28:22.907Z] [uploadQueue] Retrying task 9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0
+[debug] [2023-05-10T13:28:22.908Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [none]
+[debug] [2023-05-10T13:28:22.908Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 [stream]
+[debug] [2023-05-10T13:28:23.466Z] [uploadQueue] Retrying task 33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f
+[debug] [2023-05-10T13:28:23.467Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f [none]
+[debug] [2023-05-10T13:28:23.467Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/33b47f0ddc38b4616c7985ae9cd5378369a9181a31271e7cd27e92d9d6c9e26f [stream]
+[debug] Task 9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0 failed: retries exhausted after 6 attempts, with error: Failed to make request to https://upload-firebasehosting.googleapis.com/upload/sites/educational-project-assignment/versions/0010a9298ba42f45/files/9296fe984e6c1a602e129837f49c6a06d78241c807048d0b34a7a2a23393e7c0
+[debug] [2023-05-10T13:28:43.943Z] [hosting][upload queue][FINAL] {"max":8937,"min":7961,"avg":8449,"active":1,"complete":3,"success":2,"errored":1,"retried":9,"total":4,"elapsed":156649}
+[debug] [2023-05-10T13:28:48.962Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\Mazharul\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-05-10T13:33:23.611Z] ----------------------------------------------------------------------
+[debug] [2023-05-10T13:33:23.621Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\Mazharul\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-05-10T13:33:23.624Z] CLI Version:   11.30.0
+[debug] [2023-05-10T13:33:23.624Z] Platform:      win32
+[debug] [2023-05-10T13:33:23.624Z] Node Version:  v18.15.0
+[debug] [2023-05-10T13:33:23.742Z] Time:          Wed May 10 2023 19:33:23 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-05-10T13:33:23.743Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-10T13:33:23.954Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-10T13:33:23.955Z] > authorizing via signed-in user (shrabonahamed106@gmail.com)
+[debug] [2023-05-10T13:33:23.955Z] [iam] checking project educational-project-assignment for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-10T13:33:23.961Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions [none]
+[debug] [2023-05-10T13:33:23.961Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions x-goog-quota-user=projects/educational-project-assignment
+[debug] [2023-05-10T13:33:23.961Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-10T13:33:24.090Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions
+[debug] [2023-05-10T13:33:24.092Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment [none]
+[debug] [2023-05-10T13:33:24.656Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment
+[debug] [2023-05-10T13:33:24.700Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment
+    at RetryOperation._fn (C:\Users\Mazharul\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:242:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project educational-project-assignment. Please make sure the project exists and your account has permission to access it.
+[debug] [2023-05-10T13:46:26.586Z] ----------------------------------------------------------------------
+[debug] [2023-05-10T13:46:26.589Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\Mazharul\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-05-10T13:46:26.590Z] CLI Version:   11.30.0
+[debug] [2023-05-10T13:46:26.591Z] Platform:      win32
+[debug] [2023-05-10T13:46:26.591Z] Node Version:  v18.15.0
+[debug] [2023-05-10T13:46:26.593Z] Time:          Wed May 10 2023 19:46:26 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-05-10T13:46:26.593Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-10T13:46:26.763Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-10T13:46:26.764Z] > authorizing via signed-in user (shrabonahamed106@gmail.com)
+[debug] [2023-05-10T13:46:26.764Z] [iam] checking project educational-project-assignment for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-10T13:46:26.769Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions [none]
+[debug] [2023-05-10T13:46:26.769Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions x-goog-quota-user=projects/educational-project-assignment
+[debug] [2023-05-10T13:46:26.770Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-10T13:46:26.854Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions
+[debug] [2023-05-10T13:46:26.856Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment [none]
+[debug] [2023-05-10T13:46:27.302Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment
+[debug] [2023-05-10T13:46:27.339Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment
+    at RetryOperation._fn (C:\Users\Mazharul\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:242:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project educational-project-assignment. Please make sure the project exists and your account has permission to access it.
+[debug] [2023-05-10T17:59:26.842Z] ----------------------------------------------------------------------
+[debug] [2023-05-10T17:59:26.845Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\Mazharul\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-05-10T17:59:26.846Z] CLI Version:   11.30.0
+[debug] [2023-05-10T17:59:26.847Z] Platform:      win32
+[debug] [2023-05-10T17:59:26.847Z] Node Version:  v18.15.0
+[debug] [2023-05-10T17:59:26.951Z] Time:          Wed May 10 2023 23:59:26 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-05-10T17:59:26.953Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-10T17:59:27.176Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-10T17:59:27.177Z] > authorizing via signed-in user (shrabonahamed106@gmail.com)
+[debug] [2023-05-10T17:59:27.177Z] [iam] checking project educational-project-assignment for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-10T17:59:27.180Z] > refreshing access token with scopes: []
+[debug] [2023-05-10T17:59:27.184Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-05-10T17:59:27.184Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-10T17:59:39.374Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-05-10T17:59:39.381Z] > refreshing access token with scopes: []
+[debug] [2023-05-10T17:59:39.386Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-05-10T17:59:39.386Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-10T18:00:11.089Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-05-10T18:00:16.114Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\Mazharul\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-05-10T18:04:29.382Z] ----------------------------------------------------------------------
+[debug] [2023-05-10T18:04:29.385Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\Mazharul\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-05-10T18:04:29.386Z] CLI Version:   11.30.0
+[debug] [2023-05-10T18:04:29.386Z] Platform:      win32
+[debug] [2023-05-10T18:04:29.387Z] Node Version:  v18.15.0
+[debug] [2023-05-10T18:04:29.388Z] Time:          Thu May 11 2023 00:04:29 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-05-10T18:04:29.389Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-10T18:04:29.525Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-10T18:04:29.526Z] > authorizing via signed-in user (shrabonahamed106@gmail.com)
+[debug] [2023-05-10T18:04:29.526Z] [iam] checking project educational-project-assignment for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-10T18:04:29.528Z] > refreshing access token with scopes: []
+[debug] [2023-05-10T18:04:29.532Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-05-10T18:04:29.532Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-10T18:04:49.527Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-05-10T18:04:49.529Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-10T18:04:49.596Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions [none]
+[debug] [2023-05-10T18:04:49.596Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions x-goog-quota-user=projects/educational-project-assignment
+[debug] [2023-05-10T18:04:49.597Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-10T18:05:00.387Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions 200
+[debug] [2023-05-10T18:05:00.387Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/educational-project-assignment:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-10T18:05:00.391Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment [none]
+[debug] [2023-05-10T18:05:22.547Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/educational-project-assignment
+[debug] [2023-05-10T18:05:27.580Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\Mazharul\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
