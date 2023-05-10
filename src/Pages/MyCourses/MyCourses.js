@@ -1,0 +1,50 @@
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../Contexts/AuthProvider';
+import Table from 'react-bootstrap/Table';
+
+
+const MyCourses = () => {
+    const { user } = useContext(AuthContext);
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/courses?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setCourses(data))
+    }, [])
+
+
+    return (
+        <div className='px-5 mt-5'>
+
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Course Title</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        courses.map(course => <>
+                            <tr>
+                                <td>{course?.courseTitle}</td>
+                                <td>{course?.name}</td>
+                                <td>{course?.email}</td>
+                                <td>{course?.price} Tk</td>
+                            </tr>
+
+                        </>)
+                    }
+
+                </tbody>
+            </Table>
+
+
+        </div>
+    );
+};
+
+export default MyCourses;

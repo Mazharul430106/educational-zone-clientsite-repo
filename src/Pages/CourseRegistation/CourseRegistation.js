@@ -8,7 +8,7 @@ import { toast } from 'react-hot-toast';
 
 const CourseRegistation = () => {
     const { user } = useContext(AuthContext)
-    // console.log(user);
+    console.log(user);
     const singleCourse = useLoaderData();
     // console.log(singleCourse)
 

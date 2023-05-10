@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
@@ -13,7 +12,7 @@ const Hader = () => {
     const { user, logOutUser } = useContext(AuthContext);
     // console.log(user);
 
-    const [darkMode, setDarkMode] = useState(false);
+    // const [darkMode, setDarkMode] = useState(false);
 
     const handleLogout = () => {
         logOutUser()
@@ -44,7 +43,7 @@ const Hader = () => {
                         <Link className='text-white text-decoration-none fs-5' to='/faq' >Faq</Link>
                     </Nav.Link>
                     <Nav.Link className='text-white'>
-                        <Link className='text-white text-decoration-none fs-5' to='/faq' >My Courses</Link>
+                        <Link className='text-white text-decoration-none fs-5' to='/myCourses' >My Courses</Link>
                     </Nav.Link>
                     {
                         user?.uid ?

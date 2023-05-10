@@ -11,6 +11,7 @@ import Register from "../../Register/Register";
 import TramsAndConditions from "../../TramsAndConditions/TramsAndConditions";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CourseRegistation from "../../CourseRegistation/CourseRegistation";
+import MyCourses from "../../MyCourses/MyCourses";
 
 export const routes = createBrowserRouter([
     {
@@ -57,7 +58,13 @@ export const routes = createBrowserRouter([
                 path:'/courseRegister/:id',
                 element:<PrivateRoute><CourseRegistation></CourseRegistation></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/ourcourses/${params.id}`)
+            },
+            {
+                path: '/myCourses',
+                element:<MyCourses></MyCourses>
             }
+
+
 
             // {
             //     path: '/checkInfo/:id',
