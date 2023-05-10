@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const DisplayTeachers = ({ teacher, setModalShow }) => {
     const { name, title, Img, desc, } = teacher;
-    console.log(teacher)
+    // console.log(teacher)
     return (
         <div className='col'>
             <div class="card" >

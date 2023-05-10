@@ -7,6 +7,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
 
@@ -27,6 +28,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
+                toast.success('Login Successfully')
                 console.log(user);
                 navigate(from, { replace: true });
 

@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Register = () => {
 
@@ -26,6 +27,7 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                toast.success('Register Successfully')
                 setSuccess('Registration Succesfull.');
                 handleUpdateUserProfile(name, photoUrl);
             })

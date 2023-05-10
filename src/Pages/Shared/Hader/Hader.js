@@ -65,7 +65,7 @@ const Hader = () => {
                         {
                             user?.photoURL ?
                                 <>
-                                    <Image title={user?.displayName} src={user?.photoURL} style={{ height: '30px' }} roundedCircle >
+                                    <Image title={user?.displayName} src={user?.photoURL} style={{ height: '30px', width: '30px' }} roundedCircle >
 
                                     </Image>
                                 </>
@@ -75,16 +75,6 @@ const Hader = () => {
                                 </>
                         }
                     </Nav.Link>
-
-                    {/* <Nav.Link>
-                        <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-                            <label className="switch">
-                                <input type="checkbox" onChange={() => setDarkMode(!darkMode)} />
-                                <span className="slider round"></span>
-                            </label>
-                        </div>
-
-                    </Nav.Link> */}
 
                 </Nav>
             </Navbar.Collapse>
