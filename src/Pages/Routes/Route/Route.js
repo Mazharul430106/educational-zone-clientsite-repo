@@ -21,7 +21,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: ()=> fetch(`http://localhost:5000/ourcourses`)
+                loader: ()=> fetch(`https://educanal-server-site-assignment.vercel.app/ourcourses`)
             },
             {
                 path: '/register',
@@ -38,7 +38,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: ()=> fetch(`http://localhost:5000/ourcourses`)
+                loader: ()=> fetch(`https://educanal-server-site-assignment.vercel.app/ourcourses`)
             },
             {
                 path: '/faq',
@@ -51,13 +51,13 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkout/:id',
                 element: <PrivateRoute><CheckOutPage></CheckOutPage></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/ourcourses/${params.id}`)
+                loader: ({params})=> fetch(`https://educanal-server-site-assignment.vercel.app/ourcourses/${params.id}`)
             },
 
             {
                 path:'/courseRegister/:id',
                 element:<PrivateRoute><CourseRegistation></CourseRegistation></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/ourcourses/${params.id}`)
+                loader: ({params})=> fetch(`https://educanal-server-site-assignment.vercel.app/ourcourses/${params.id}`)
             },
             {
                 path: '/myCourses',

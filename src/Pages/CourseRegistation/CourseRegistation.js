@@ -16,7 +16,7 @@ const CourseRegistation = () => {
     const courseRegisterForm = (data) => {
         console.log(data);
 
-        fetch('http://localhost:5000/courses', {
+        fetch('https://educanal-server-site-assignment.vercel.app/courses', {
             method: 'post',
             headers: {
                 "content-Type": "application/json",

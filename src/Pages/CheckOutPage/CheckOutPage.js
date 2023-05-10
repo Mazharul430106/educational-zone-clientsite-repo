@@ -19,7 +19,7 @@ const CheckOutPage = () => {
     const handleReview = (data, e) => {
         // console.log(data)
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://educanal-server-site-assignment.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
