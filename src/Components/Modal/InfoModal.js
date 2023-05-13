@@ -1,8 +1,8 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 
-
-function MyVerticallyCenteredModal(props) {
+function MyVerticallyCenteredModal(props,) {
+   
     return (
         <Modal
             {...props}
@@ -16,7 +16,7 @@ function MyVerticallyCenteredModal(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4>hellow world</h4>
+                <h4>Modal Header</h4>
                 <p>
                     Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
                     dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
@@ -27,7 +27,8 @@ function MyVerticallyCenteredModal(props) {
     );
 }
 
-const InfoModal = ({ modalShow, setModalShow, }) => {
+const InfoModal = ({ modalShow, setModalShow, teacherInfo }) => {
+    console.log(teacherInfo)
 
     return (
 
@@ -36,8 +37,11 @@ const InfoModal = ({ modalShow, setModalShow, }) => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
-        </div>
+
+        </div >
     );
 };
+
+
 
 export default InfoModal;

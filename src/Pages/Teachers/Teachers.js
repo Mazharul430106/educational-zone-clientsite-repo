@@ -34,10 +34,10 @@ const teacthers = [
     },
 ]
 
-const Teachers = () => {
+const Teachers = ({teacher}) => {
     const [modalShow, setModalShow] = useState(false);
-
-
+     const [teacherInfo, setTeacherInfo] = useState(null);
+    // console.log(teacherInfo)
     return (
         <div className='mt-5 mb-5 px-5'>
             <div className='mb-4'>
@@ -45,11 +45,11 @@ const Teachers = () => {
             </div>
             <div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 '>
                 {
-                    teacthers.map(teacher => <DisplayTeachers teacher={teacher} setModalShow={setModalShow} ></DisplayTeachers>)
+                    teacthers.map(teacher => <DisplayTeachers setTeacherInfo={setTeacherInfo} teacher={teacher} setModalShow={setModalShow} ></DisplayTeachers>)
                 }
             </div>
 
-            <InfoModal modalShow={modalShow} setModalShow={setModalShow}></InfoModal>
+            <InfoModal teacherInfo={teacherInfo} teacher={teacher} modalShow={modalShow} setModalShow={setModalShow}></InfoModal>
 
         </div>
 

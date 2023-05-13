@@ -2,14 +2,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const DisplayTeachers = ({ teacher, setModalShow }) => {
+const DisplayTeachers = ({ teacher, setModalShow, setTeacherInfo }) => {
     const { name, title, Img, desc, } = teacher;
     // console.log(teacher)
     return (
         <div className='col'>
             <div class="card" >
-                <Link to=''  onClick={() => setModalShow(true)} >
-                    <img src={Img} class="card-img-top" alt="..." />
+                <Link to='' onClick={() => setModalShow(true)} >
+                    <img src={Img} onClick={()=> setTeacherInfo(teacher)} class="card-img-top" alt="..." />
                 </Link>
                 <div class="card-body">
                     <h5 class="card-title">{name}</h5>
