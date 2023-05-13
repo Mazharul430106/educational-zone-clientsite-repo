@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import Table from 'react-bootstrap/Table';
 
-
 const MyCourses = () => {
     const { user } = useContext(AuthContext);
     const [courses, setCourses] = useState([]);
