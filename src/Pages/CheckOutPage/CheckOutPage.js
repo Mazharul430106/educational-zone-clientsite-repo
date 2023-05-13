@@ -13,9 +13,7 @@ const CheckOutPage = () => {
     const { details, picture, title, _id, duration, price } = courseDetails;
     // console.log(courseDetails)
 
-
     const { register, handleSubmit } = useForm();
-
     const handleReview = (data, e) => {
         // console.log(data)
 
@@ -113,7 +111,6 @@ const CheckOutPage = () => {
                         Add Review
                     </Button>
                 </Form>
-
             </div>
         </div>
 

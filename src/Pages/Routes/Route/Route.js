@@ -12,6 +12,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CourseRegistation from "../../CourseRegistation/CourseRegistation";
 import MyCourses from "../../MyCourses/MyCourses";
 import MyReviews from "../../MyReviews/MyReviews";
+import UpdateReview from "../../UpdateReview/UpdateReview";
 
 export const routes = createBrowserRouter([
     {
@@ -66,6 +67,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/myReviews',
                 element:<PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+            },
+            {
+                path: '/updateReview/:id',
+                element: <UpdateReview></UpdateReview>,
+                loader: ({params})=> fetch(`http://localhost:5000/reviews/${params.id}`),
             }
 
         ]
